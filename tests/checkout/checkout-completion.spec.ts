@@ -3,13 +3,7 @@ import { checkoutInformation } from '../../test-data/checkout.js';
 import { products } from '../../test-data/products.js';
 import { standardUser } from '../../test-data/users.js';
 
-test('standard user can complete checkout', async ({
-  appNavigation,
-  cartPage,
-  checkoutPage,
-  inventoryPage,
-  loginPage,
-}) => {
+test.beforeEach(async ({ appNavigation, cartPage, inventoryPage, loginPage }) => {
   await test.step('Sign in, add the backpack, and start checkout', async () => {
     await loginPage.open();
     await loginPage.signIn(standardUser);
@@ -17,7 +11,11 @@ test('standard user can complete checkout', async ({
     await appNavigation.openCart();
     await cartPage.proceedToCheckout();
   });
+});
 
+test('standard user can complete checkout', async ({
+  checkoutPage,
+}) => {
   await test.step('Enter checkout information and place the order', async () => {
     await checkoutPage.fillInformation(checkoutInformation);
     await checkoutPage.continueToOverview();
