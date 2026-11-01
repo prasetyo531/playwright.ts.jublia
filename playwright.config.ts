@@ -13,6 +13,7 @@ export default defineConfig({
   outputDir: 'test-results',
   use: {
     baseURL: process.env.BASE_URL ?? 'https://www.saucedemo.com',
+    testIdAttribute: 'data-test',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
