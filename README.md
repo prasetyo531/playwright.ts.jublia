@@ -66,6 +66,7 @@ Screenshots, videos, and traces are retained for failed tests in `test-results/`
 - The default base URL is `https://www.saucedemo.com`; the local `.env` file lets you switch to another compatible environment.
 - Tests use SauceDemo's public `standard_user` demo account. Its demo password and the test account data are kept in `test-data/users.ts`; no private account or `.env` file is required for credentials.
 - Checkout test data is sample data stored in `test-data/checkout.ts`.
+- Local TypeScript modules use the `@/` alias, mapped to the repository root in `tsconfig.json`.
 - The Playwright project uses Chromium and the site's `data-test` attributes where available.
 
 ## Project structure

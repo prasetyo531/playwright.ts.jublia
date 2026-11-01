@@ -1,6 +1,6 @@
-import { expect, test } from '../../fixtures/saucedemo.fixture.js';
-import { products } from '../../test-data/products.js';
-import { standardUser } from '../../test-data/users.js';
+import { expect, test } from '@/fixtures/saucedemo.fixture.js';
+import { products } from '@/test-data/products.js';
+import { standardUser } from '@/test-data/users.js';
 
 test.beforeEach(async ({ inventoryPage, loginPage }) => {
   await test.step('Sign in and add the backpack', async () => {

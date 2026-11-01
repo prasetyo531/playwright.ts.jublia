@@ -1,9 +1,9 @@
 import { expect, test as base } from '@playwright/test';
-import { AppNavigationComponent } from '../components/app-navigation.component.js';
-import { CartPage } from '../pages/cart.page.js';
-import { CheckoutPage } from '../pages/checkout.page.js';
-import { InventoryPage } from '../pages/inventory.page.js';
-import { LoginPage } from '../pages/login.page.js';
+import { AppNavigationComponent } from '@/components/app-navigation.component.js';
+import { CartPage } from '@/pages/cart.page.js';
+import { CheckoutPage } from '@/pages/checkout.page.js';
+import { InventoryPage } from '@/pages/inventory.page.js';
+import { LoginPage } from '@/pages/login.page.js';
 
 type SauceDemoFixtures = {
   appNavigation: AppNavigationComponent;

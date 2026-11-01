@@ -1,4 +1,4 @@
-import type { CheckoutInformation } from '../types/saucedemo.types.js';
+import type { CheckoutInformation } from '@/types/saucedemo.types.js';
 
 export const checkoutInformation: CheckoutInformation = {
   firstName: 'Test',

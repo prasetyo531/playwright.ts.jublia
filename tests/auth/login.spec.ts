@@ -1,5 +1,5 @@
-import { expect, test } from '../../fixtures/saucedemo.fixture.js';
-import { standardUser } from '../../test-data/users.js';
+import { expect, test } from '@/fixtures/saucedemo.fixture.js';
+import { standardUser } from '@/test-data/users.js';
 
 test.beforeEach(async ({ loginPage }) => {
   await test.step('Open the login page', async () => {

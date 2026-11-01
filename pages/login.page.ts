@@ -1,5 +1,5 @@
 import type { Locator, Page } from '@playwright/test';
-import type { LoginCredentials } from '../types/saucedemo.types.js';
+import type { LoginCredentials } from '@/types/saucedemo.types.js';
 
 export class LoginPage {
   readonly usernameInput: Locator;

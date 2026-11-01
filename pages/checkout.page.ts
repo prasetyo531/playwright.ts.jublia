@@ -1,5 +1,5 @@
 import type { Locator, Page } from '@playwright/test';
-import type { CheckoutInformation } from '../types/saucedemo.types.js';
+import type { CheckoutInformation } from '@/types/saucedemo.types.js';
 
 export class CheckoutPage {
   readonly firstNameInput: Locator;

@@ -1,7 +1,7 @@
-import { expect, test } from '../../fixtures/saucedemo.fixture.js';
-import { checkoutInformation } from '../../test-data/checkout.js';
-import { products } from '../../test-data/products.js';
-import { standardUser } from '../../test-data/users.js';
+import { expect, test } from '@/fixtures/saucedemo.fixture.js';
+import { checkoutInformation } from '@/test-data/checkout.js';
+import { products } from '@/test-data/products.js';
+import { standardUser } from '@/test-data/users.js';
 
 test.beforeEach(async ({ appNavigation, cartPage, inventoryPage, loginPage }) => {
   await test.step('Sign in, add the backpack, and start checkout', async () => {
