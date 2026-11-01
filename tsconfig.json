@@ -12,9 +12,11 @@
   },
   "include": [
     "playwright.config.ts",
-    "tests/**/*.ts",
-    "pages/**/*.ts",
+    "components/**/*.ts",
     "fixtures/**/*.ts",
-    "test-data/**/*.ts"
+    "pages/**/*.ts",
+    "test-data/**/*.ts",
+    "tests/**/*.ts",
+    "types/**/*.ts"
   ]
 }
