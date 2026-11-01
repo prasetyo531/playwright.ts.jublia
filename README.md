@@ -14,12 +14,19 @@ Install project dependencies and the Chromium browser used by the Playwright pro
 ```bash
 npm ci
 npx playwright install chromium
+cp .env.example .env
 ```
 
-On a Linux machine that does not already have Playwright's browser system dependencies, install them with:
+Edit `BASE_URL` in `.env` to point at another compatible environment. On a Linux machine that does not already have Playwright's browser system dependencies, install them with:
 
 ```bash
 npx playwright install --with-deps chromium
+```
+
+A `BASE_URL` value set by the shell or CI takes precedence over `.env`. For a one-off run:
+
+```bash
+BASE_URL=https://your-environment.example npm test
 ```
 
 ## Run checks and tests
@@ -56,22 +63,22 @@ Screenshots, videos, and traces are retained for failed tests in `test-results/`
 
 ## Configuration and assumptions
 
-- The default base URL is `https://www.saucedemo.com`. Set `BASE_URL` to point the tests at another compatible environment.
-- Tests use SauceDemo's public `standard_user` demo account. Its demo password and the test account data are kept in `test-data/users.ts`; no private account or `.env` file is required.
+- The default base URL is `https://www.saucedemo.com`; the local `.env` file lets you switch to another compatible environment.
+- Tests use SauceDemo's public `standard_user` demo account. Its demo password and the test account data are kept in `test-data/users.ts`; no private account or `.env` file is required for credentials.
 - Checkout test data is sample data stored in `test-data/checkout.ts`.
 - The Playwright project uses Chromium and the site's `data-test` attributes where available.
 
 ## Project structure
 
 ```text
-components/       Shared UI components
-fixtures/         Typed Playwright fixtures
-pages/            Page objects
-test-data/       Demo users, products, and checkout data
-tests/auth/       Login and logout flows
-tests/cart/       Add and remove cart flows
-tests/checkout/   Checkout completion flow
-types/            Shared TypeScript types
+components/        Shared UI components
+fixtures/          Typed Playwright fixtures
+pages/             Page objects
+test-data/         Demo users, products, and checkout data
+tests/auth/        Login and logout flows
+tests/cart/        Add and remove cart flows
+tests/checkout/    Checkout completion flow
+types/             Shared TypeScript types
 .github/workflows/ GitHub Actions CI workflow
 ```
 

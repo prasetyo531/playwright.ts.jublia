@@ -5,9 +5,13 @@ test('standard user can log in and see the inventory', async ({
   page,
   loginPage,
 }) => {
-  await loginPage.open();
-  await loginPage.signIn(standardUser);
+  await test.step('Sign in as the standard user', async () => {
+    await loginPage.open();
+    await loginPage.signIn(standardUser);
+  });
 
-  await expect(page).toHaveURL(/inventory\.html$/);
-  await expect(page.getByText('Sauce Labs Backpack', { exact: true })).toBeVisible();
+  await test.step('Verify the inventory is displayed', async () => {
+    await expect(page).toHaveURL(/inventory\.html$/);
+    await expect(page.getByText('Sauce Labs Backpack', { exact: true })).toBeVisible();
+  });
 });

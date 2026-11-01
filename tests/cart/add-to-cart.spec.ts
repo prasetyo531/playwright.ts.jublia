@@ -8,12 +8,18 @@ test('standard user can add a product to the cart', async ({
   inventoryPage,
   loginPage,
 }) => {
-  await loginPage.open();
-  await loginPage.signIn(standardUser);
+  await test.step('Sign in as the standard user', async () => {
+    await loginPage.open();
+    await loginPage.signIn(standardUser);
+  });
 
-  await inventoryPage.addProductToCart(products.backpack.name);
-  await expect(appNavigation.cartBadge).toHaveText('1');
+  await test.step('Add the backpack and verify the cart badge', async () => {
+    await inventoryPage.addProductToCart(products.backpack.name);
+    await expect(appNavigation.cartBadge).toHaveText('1');
+  });
 
-  await appNavigation.openCart();
-  await expect(cartPage.getItem(products.backpack.name)).toBeVisible();
+  await test.step('Verify the backpack is in the cart', async () => {
+    await appNavigation.openCart();
+    await expect(cartPage.getItem(products.backpack.name)).toBeVisible();
+  });
 });
