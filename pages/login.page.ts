@@ -7,9 +7,9 @@ export class LoginPage {
   readonly submitButton: Locator;
 
   constructor(private readonly page: Page) {
-    this.usernameInput = page.getByTestId('username');
-    this.passwordInput = page.getByTestId('password');
-    this.submitButton = page.getByTestId('login-button');
+    this.usernameInput = page.getByRole('textbox', { name: 'Username' });
+    this.passwordInput = page.getByRole('textbox', { name: 'Password' });
+    this.submitButton = page.getByRole('button', { name: 'Login', exact: true });
   }
 
   async open(): Promise<void> {
